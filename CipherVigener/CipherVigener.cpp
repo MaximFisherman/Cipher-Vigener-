@@ -10,37 +10,52 @@ using namespace std;
 
 string alphabet = {"abcdefghijklmnopqrstuvwxyz"};
 
+
 string Key(string cipherWord, string keyInput) {
 	int i = 0;
 	string key;
 	for (int i = 0; i < cipherWord.length(); i++) {
-		cout << "len cipher loop: " << cipherWord.length() - keyInput.length();
 		for (int j = 0; j < keyInput.length(); j++) {
-			cout << " key len: " << key.length() << " cipher len: " << cipherWord.length() << endl;
 			if (key.length() == cipherWord.length()) {
-				cout << "yea" << endl;
 				break;
-			}
-			
+			}		
 			key = key + keyInput[j];
-			cout << " Key : " << key<<endl;
-
-			
-			/*cout << "len: " << cipherWord.length() << endl;
-			cout << "Key interation:" << i << endl;*/
-
 		}
 	}
 	return key;
+};
+
+int GetNumberLetter(char Letter) {
+	int numberPositionAlphabet = 0;
+	for (int i = 0; i < alphabet.length(); i++) {
+		if(Letter == alphabet[i]){
+			numberPositionAlphabet = i;
+			break;
+		}
+	}
+	return numberPositionAlphabet;
+}
+
+char ConvertInLetter(int ASCII_ALPHABET) {
+	return alphabet[ASCII_ALPHABET];
+};
+
+string Crypt(string cipherWord, string key) {
+	string Crypt;
+		for (int j = 0; j < cipherWord.length(); j++) {
+			Crypt = Crypt + ConvertInLetter((GetNumberLetter(cipherWord[j]) + GetNumberLetter(key[j]))%alphabet.length());
+		}
+
+	return Crypt;
 };
 
 int main(){
 	string cipherWord;
 	string keyInput;
 	getline(cin, cipherWord);
-	getline(cin, keyInput);
+	getline(cin, keyInput);//Input user key word
 
-	cout << Key(cipherWord, keyInput);
+	cout<<Crypt(cipherWord,Key(cipherWord, keyInput));
 	system("pause");
     return 0;
 }
