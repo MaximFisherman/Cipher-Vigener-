@@ -1,1 +1,8 @@
-﻿LINK : fatal error LNK1168: не удается открыть C:\Users\Maks_\documents\visual studio 2015\Projects\CipherVigener\Debug\CipherVigener.exe для записи
+﻿  CipherVigener.cpp
+c:\users\maks_\documents\visual studio 2015\projects\ciphervigener\ciphervigener\ciphervigener.cpp(17): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\maks_\documents\visual studio 2015\projects\ciphervigener\ciphervigener\ciphervigener.cpp(18): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\maks_\documents\visual studio 2015\projects\ciphervigener\ciphervigener\ciphervigener.cpp(30): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\maks_\documents\visual studio 2015\projects\ciphervigener\ciphervigener\ciphervigener.cpp(45): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\maks_\documents\visual studio 2015\projects\ciphervigener\ciphervigener\ciphervigener.cpp(54): warning C4018: <: несоответствие типов со знаком и без знака
+  CipherVigener.vcxproj -> C:\Users\Maks_\documents\visual studio 2015\Projects\CipherVigener\Debug\CipherVigener.exe
+  CipherVigener.vcxproj -> C:\Users\Maks_\documents\visual studio 2015\Projects\CipherVigener\Debug\CipherVigener.pdb (Full PDB)

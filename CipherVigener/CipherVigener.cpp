@@ -8,7 +8,7 @@
 
 using namespace std;
 
-string alphabet = {"abcdefghijklmnopqrstuvwxyz"};
+string alphabet = {"abcdefghijklmnopqrstuvwxyz "};
 
 
 string Key(string cipherWord, string keyInput) {
@@ -49,13 +49,24 @@ string Crypt(string cipherWord, string key) {
 	return Crypt;
 };
 
+string Decode(string cipherWord, string key) {
+	string Decrypt;
+	for (int j = 0; j < cipherWord.length(); j++) {
+		Decrypt = Decrypt + ConvertInLetter((GetNumberLetter(cipherWord[j]) - GetNumberLetter(key[j]) + alphabet.length()) % alphabet.length());
+	}
+
+	return Decrypt;
+};
+
 int main(){
 	string cipherWord;
 	string keyInput;
 	getline(cin, cipherWord);
 	getline(cin, keyInput);//Input user key word
 
-	cout<<Crypt(cipherWord,Key(cipherWord, keyInput));
+	string cryptWord = Crypt(cipherWord,Key(cipherWord, keyInput));
+	cout << "Crypt:" << cryptWord << endl;
+	cout << Decode(cryptWord, Key(cipherWord, keyInput));
 	system("pause");
     return 0;
 }
