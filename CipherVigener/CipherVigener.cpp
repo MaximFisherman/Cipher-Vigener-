@@ -40,7 +40,7 @@ char ConvertInLetter(int ASCII_ALPHABET) {
 	return alphabet[ASCII_ALPHABET];
 };
 
-string Crypt(string cipherWord, string key) {
+string Encryption(string cipherWord, string key) {
 	string Crypt;
 		for (int j = 0; j < cipherWord.length(); j++) {
 			Crypt = Crypt + ConvertInLetter((GetNumberLetter(cipherWord[j]) + GetNumberLetter(key[j]))%alphabet.length());
@@ -49,7 +49,7 @@ string Crypt(string cipherWord, string key) {
 	return Crypt;
 };
 
-string Decode(string cipherWord, string key) {
+string Decryption(string cipherWord, string key) {
 	string Decrypt;
 	for (int j = 0; j < cipherWord.length(); j++) {
 		Decrypt = Decrypt + ConvertInLetter((GetNumberLetter(cipherWord[j]) - GetNumberLetter(key[j]) + alphabet.length()) % alphabet.length());
@@ -64,9 +64,9 @@ int main(){
 	getline(cin, cipherWord);
 	getline(cin, keyInput);//Input user key word
 
-	string cryptWord = Crypt(cipherWord,Key(cipherWord, keyInput));
+	string cryptWord = Encryption(cipherWord,Key(cipherWord, keyInput));
 	cout << "Crypt:" << cryptWord << endl;
-	cout << Decode(cryptWord, Key(cipherWord, keyInput));
+	cout << Decryption(cryptWord, Key(cipherWord, keyInput));
 	system("pause");
     return 0;
 }
